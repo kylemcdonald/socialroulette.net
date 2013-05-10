@@ -124,6 +124,13 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     </div>
     <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px" id="result">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
     
+    <div class="dlead dmargintop dmarginbottom">Testimonials</div>
+    <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="http://gawker.com/">Gawker</a></small></h4></div>
+    <div class="justify maintext"><h4>"Man, if only these hackers could make up their mind." <small><a href="https://twitter.com/bruces">Bruce Sterling</a></small></h4></div>
+    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">Jon Gruber</a></small></h4></div>
+    <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="http://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
+    
+    <hr class="roulette">
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">The Story</div>
     <div class="justify maintext">Social Roulette has a 1 in 6 chance of deleting your account, and a 5 in 6 chance that it just posts "I played Social Roulette and survived" to your timeline.</div>
@@ -131,23 +138,20 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="justify maintext">Everyone thinks about deleting their account at some point, it's a completely normal reaction to the overwhelming nature of digital culture. Is it time to consider a new development in your life? Are you looking for the opportunity to start fresh? Or are you just seeking cheap thrills at the expense of your social network? Maybe it's time for you to play Social Roulette.</div>
     </div>
     
-    <div class="dlead dmargintop dmarginbottom">Testimonials</div>
-    
-    <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="http://gawker.com/">Gawker</a></small></h4></div>
-    <div class="justify maintext"><h4>"Man, if only these hackers could make up their mind." <small><a href="https://twitter.com/bruces">Bruce Sterling</a></small></h4></div>
-    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">Jon Gruber</a></small></h4></div>
-    <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="http://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
-    
-    <hr class="roulette">
-    
+    <hr class="roulette">    
     <div class="dlead dmarginbottom">Rules</div>
-    <div class="justify maintext"><p></p></div>
+    <div class="justify maintext"><p>There are a few basic rules for playing a successful game of Social Roulette.</p></div>
     <div class="justify maintext"><p>
     <ol>
     <li>You must play with your <span class="highlighted">own account</span>.</li>
     <li>You may only play <span class="highlighted">once a day</span>.</li>
     </ol>
     </p></div>
+    
+    <hr class="roulette">    
+    <div class="dlead dmarginbottom">T-Shirts</div>
+    <div class="justify maintext"><p>Have you survived Social Roulette? Why not flaunt it with a t-shirt?</p></div>
+    <div class="justify maintext"><p><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440"/></a></p></div>
     
     <div class="myFooter"></div>      
   </div>
