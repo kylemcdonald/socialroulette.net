@@ -2,6 +2,7 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 require 'facebooksdk/src/facebook.php';
+require 'cfg.php';
 
 //Get Path
 $path = explode('/',str_replace('?'.$_SERVER['QUERY_STRING'],'',$_SERVER['REQUEST_URI']));
@@ -9,8 +10,8 @@ array_shift($path);
 
 // Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
-  'appId'  => '283583331777209',
-  'secret' => 'c2f8f3549e44fc5a51c027694c090871',
+  'appId'  => Config::appId,
+  'secret' => Config::secret,
 ));
 
 // Get User ID
@@ -62,7 +63,9 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
   <script>
     
     $("#play").click(function() {
-    
+      
+      //do animation stuff here
+      
       $.ajax({
         url: "/play.php",
         success: function(data) {
@@ -70,10 +73,12 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
 
           //not logged in
           if(data === "503") {
+            //error
             window.location.href = "/";
+          
           } else {            
                       
-            //append status message
+            //SHOW RESULTS
             $(res).html(data);
           }
         }

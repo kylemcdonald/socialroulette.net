@@ -3,13 +3,13 @@ ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
 require 'facebooksdk/src/facebook.php';
-require 'dbcfg.php';
+require 'cfg.php';
+require 'db.php';
 
 $facebook = new Facebook(array(
-  'appId'  => '283583331777209',
-  'secret' => 'c2f8f3549e44fc5a51c027694c090871',
+  'appId'  => Config::appId,
+  'secret' => Config::secret,
 ));
-
   
 $user = $facebook->getUser();
 
@@ -28,12 +28,16 @@ if ($user) {
 
   //add cordinal message to status update
   if($count > 0) {
-    $ext = "for the " . addOrdinalNumberSuffix($count) . " time";
+    if($count == 1) {
+      $count++;
+    }
+
+    $ext = " for the " . addOrdinalNumberSuffix($count) . " time";
   } else {
     $ext = "";
   }
 
-  //try to post, will get rejected if it's a dubplicate
+  // //try to post, will get rejected if it's a dubplicate
   try {    
 
     $facebook->api('/me/feed', 'post', array('message'=> "I just survived Social Roulette ".$ext."! – http://socialroulette.net"));
@@ -49,7 +53,7 @@ if ($user) {
     }
 
     //return message
-    echo "<h1>Phew, You Survived Social Roulette ".$ext."!</h1><a href='/play'>Click Here To Play Again!</a>";
+    echo "<h1>Phew, You Survived Social Roulette".$ext."!</h1><a href='/play'>Click Here To Play Again!</a>";
 
   } catch (FacebookApiException $e) {
     error_log($e);
