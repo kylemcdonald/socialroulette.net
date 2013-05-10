@@ -179,7 +179,8 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       }
       
       $("#result").html(returnMess);
-
+      $("#play").text("Done");
+    
     }
     
     function update(){
