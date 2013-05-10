@@ -40,7 +40,7 @@ if ($user) {
   //try to post, will get rejected if it's a dubplicate
   try {    
 
-    $facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette and survived".$ext."! – http://socialroulette.net"));
+    $facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
     
     //insert || update DB with count & userid
     if($count > 0 ) {
