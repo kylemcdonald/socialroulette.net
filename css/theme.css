@@ -241,7 +241,7 @@ header {
 {
 	margin-top: 40px;
 	padding-bottom: 40px;
-	border-top: 1px solid #EEE;
+	border-top: 1px solid #999;
 }
 
 .contactInput {
@@ -720,4 +720,8 @@ hr.roulette::after {
 	top: -8px;
 	width: 60px;
 	background-size: 16px 15px;
+}
+
+ol > li {
+  margin: 10px;
 }
