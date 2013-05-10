@@ -12,7 +12,7 @@ $facebook = new Facebook(array(
 ));
   
 $user = $facebook->getUser();
-print_r($user);
+print_r(Config::appId);
 
 if ($user) {
   try {
