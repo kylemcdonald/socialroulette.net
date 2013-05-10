@@ -227,6 +227,8 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     $("#play").click(function() {      
       //do animation stuff here      
 
+      $("#play").text("Playing...").unbind("click");
+
       $.ajax({
         url: "/play.php",
         success: function(data) {          
