@@ -122,7 +122,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       <?php endif;?>
       
     </div>
-    <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
+    <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px" id="result">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
     
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">The Story</div>
