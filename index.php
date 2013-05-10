@@ -30,7 +30,6 @@ if ($user) {
 $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp_event, publish_actions, friends_online_presence, user_online_presence, manage_notifications, manage_friendlists, create_event, ads_management, xmpp_login, read_stream, read_requests, read_mailbox, read_insights, read_friendlists, user_work_history, user_website, user_videos, user_subscriptions, user_status, user_religion_politics, user_relationship_details, user_relationships, user_questions, user_photos, user_notes, user_location, user_likes, user_interests, user_hometown, user_groups, user_education_history, user_games_activity, user_actions.video, user_actions.news, user_actions.music')); 
 
 ?>
-
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Social Roulette</title>
@@ -44,7 +43,10 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
-  <style type="text/css"></style></head>
+  <style type="text/css">
+    #play {background: red;}
+  </style>  
+</head>
   <body>
   <div class="navbar navbar-inverse navbar-roulette">
       <div class="navbar-inner">
@@ -115,6 +117,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
         url: "/play.php",
         success: function(data) {
           var res = $("#result");
+          console.log(data);
 
           //not logged in
           if(data === "503") {
@@ -139,6 +142,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>  
-  
+
 </body>
 </html>
