@@ -84,16 +84,16 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">The Story</div>
     <div class="justify maintext">Social Roulette has a 1 in 6 chance of deleting your account, and a 5 in 6 chance that it just posts "I played Social Roulette and survived" to your timeline.</div>
-    <div><img src="img/post.png" width="582" height="226"/></div>
-    <div class="justify maintext">Everyone thinks about deleting their account at some point, it's a completely normal reaction to the overwhelming nature of digital culture.</div>
-    <div class="justify maintext">Is it time to consider a new development in your life? Are you looking for the opportunity to start fresh? Or are you just seeking cheap thrills at the expense of your social network?</div>
-    <div class="justify maintext">Maybe it's time for you to play Social Roulette.</div>
+    <div><img src="img/post.png" width="582" height="226" style="margin:40px"/></div>
+    <div class="justify maintext">Everyone thinks about deleting their account at some point, it's a completely normal reaction to the overwhelming nature of digital culture. Is it time to consider a new development in your life? Are you looking for the opportunity to start fresh? Or are you just seeking cheap thrills at the expense of your social network? Maybe it's time for you to play Social Roulette.</div>
     </div>
     
     <div class="dlead dmargintop dmarginbottom">Testimonials</div>
-    <div class="justify maintext">Social Roulette just rewrote the rules for online gaming.</div>
-    <div class="justify maintext">Playing Social Roulette is the most exciting thing I've done this year.</div>
-    <div class="justify maintext">I still can't tell whether I won or not.</div>
+    
+    <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="http://gawker.com/">Gawker</a></small></h4></div>
+    <div class="justify maintext"><h4>"Man, if only these hackers could make up their mind." <small><a href="https://twitter.com/bruces">Bruce Sterling</a></small></h4></div>
+    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">Jon Gruber</a></small></h4></div>
+    <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="http://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
     
     <hr class="roulette">
     
