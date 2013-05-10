@@ -151,7 +151,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <hr class="roulette">    
     <div class="dlead dmarginbottom">T-Shirts</div>
     <div class="justify maintext"><p>Have you survived Social Roulette? Why not flaunt it with a t-shirt?</p></div>
-    <div class="justify maintext"><p><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440"/></a></p></div>
+    <div><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440" style="margin:40px"/></a></div>
     
     <div class="myFooter"></div>      
   </div>
