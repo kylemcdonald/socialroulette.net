@@ -43,13 +43,13 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
 
 <body>  
   <div id="result">
-
+    <!-- put social roulette results in #result -->
   </div>
 
   <?php if ($user): //Haz User ?>      
     <a href="/play" id="play">Click Here To Play Social Roulette. WARNING, there's a 1/6th change your Facebook account will be deleted</a>
 
-  <?php else: //No Haz User?>
+  <?php else: //No Haz User ?>
     <div>        
       <a href="<?php echo $loginUrl; ?>">Click Here to begin playing Social Roulette with your Facebook account</a>
     </div>
@@ -64,8 +64,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     
     $("#play").click(function() {
       
-      //do animation stuff here
-      
+      //do animation stuff here      
       $.ajax({
         url: "/play.php",
         success: function(data) {
@@ -73,8 +72,8 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
 
           //not logged in
           if(data === "503") {
-            //error
-            window.location.href = "/";
+
+            window.location.href = "http://socialroulette.net/";
           
           } else {            
                       
