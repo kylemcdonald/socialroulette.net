@@ -13,8 +13,6 @@ $facebook = new Facebook(array(
   
 $user = $facebook->getUser();
 
-print_r($user);
-
 if ($user) {
   $message = "Phew, You Survived Social Roulette!";
 
