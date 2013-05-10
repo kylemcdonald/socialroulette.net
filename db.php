@@ -1,7 +1,4 @@
 <?php  
-  session_name('awesomeo');
-  session_start();
-    
   class DB {
     
     private static $pdo;
