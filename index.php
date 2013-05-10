@@ -114,15 +114,19 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       <?php if($user): ?>
         <a class="btn btn-large btn-primary" id="play" href="">Play Social Roulette</a>
       <?php else: ?>
-        <a class="btn btn-large btn-primary" href="<?php echo $loginUrl?>">Login to Play Social Roulette</a>
+        <a class="btn btn-large btn-primary" href="<?php echo $loginUrl?>">Sign in to play Social Roulette</a>
       <?php endif;?>
       
     </div>
     <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
-    <!--<div class="center"><input type="submit" value="Play Presentation Video" class="rouletteButton playButton"></div>-->
+    
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">The Story</div>
-    <div class="justify maintext">Social Roulette has a 1 in 6 chance of deleting your account, and a 5 in 6 chance that it just posts "You played Social Roulette" to your timeline.
+    <div class="justify maintext">Social Roulette has a 1 in 6 chance of deleting your account, and a 5 in 6 chance that it just posts "I played Social Roulette and survived" to your timeline.</div>
+    <div><img src="img/post.png" width="582" height="226"/></div>
+    <div class="justify maintext">Everyone thinks about deleting their account at some point, it's a completely normal reaction to the overwhelming nature of digital culture.</div>
+    <div class="justify maintext">Is it time to consider a new development in your life? Are you looking for the opportunity to start fresh? Or are you just seeking cheap thrills at the expense of your social network?</div>
+    <div class="justify maintext">Maybe it's time for you to play Social Roulette.</div>
     </div>
     
     <div class="dlead dmargintop dmarginbottom">Testimonials</div>
