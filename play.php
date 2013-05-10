@@ -12,6 +12,8 @@ $facebook = new Facebook(array(
 ));
   
 $user = $facebook->getUser();
+print_r($user);
+
 if ($user) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
