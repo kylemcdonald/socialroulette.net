@@ -43,6 +43,12 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     
+  <meta property="og:title" content="Social Roulette" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://socialroulette.net" />
+  <meta property="og:image" content="http://socialroulette.net/img/256.png" />
+
+
   <style type="text/css">
     #play {background: red;}
   
