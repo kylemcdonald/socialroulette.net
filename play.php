@@ -12,9 +12,9 @@ $facebook = new Facebook(array(
 $user = $facebook->getUser();
 
 if ($user) {
-  //post message
-  try {
-    // Proceed knowing you have a logged in user who's authenticated.
+  
+  //try to post, will get rejected if it's a dubplicate
+  try {    
     $facebook->api('/me/feed', 'post', array('message'=> "ENTER MESSAGE HERE"));
     echo "<h1>Phew, You Survived Social Roulette!</h1><a href='/play'>Click Here To Play Again!</a>";
 

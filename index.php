@@ -68,14 +68,11 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
         success: function(data) {
           var res = $("#result");
 
+          //not logged in
           if(data === "503") {
             window.location.href = "/";
-          } else if (data === "duplicate") {
-
-            $(res).html(data);
-
           } else {            
-            
+                      
             //append status message
             $(res).html(data);
           }
