@@ -45,6 +45,36 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     
   <style type="text/css">
     #play {background: red;}
+  
+  #roulette {
+    width: 256px;
+    height: 256px;
+    margin:0 auto;
+    top:0px;
+    position:relative;
+  }
+
+  #rouletteBackground{
+    position:absolute;
+    background-image: url("animation/roul1.png"); 
+    background-size:256px;
+    width: 256px;
+    height: 256px;
+  }
+  #rouletteRotater{
+    position:absolute;
+    background-image: url("animation/roul2.png"); 
+    background-size:256px;
+    width: 256px;
+    height: 256px;
+  }
+  #rouletteCrosshair{
+    position:absolute;
+    background-image: url("animation/crosshgair.png"); 
+    background-size:256px;
+    width: 256px;
+    height: 256px;
+  }    
   </style>  
 </head>
   <body>
@@ -69,8 +99,21 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
         </div>
     </div>
     <div style="padding-top: 30px; padding-bottom: 20px; text-align: center;" class="roulette-title-background row-fluid">
-    <div class="span4 rouletteQuoteSpan" id="appQuote"><img src="./img/quote.png" class="rouletteQuote" width="256" height="169"></div>
-    <div class="span4" id="appIcon"><img src="./img/256.png" width="256" height="256"></div>
+       <div class="span4 rouletteQuoteSpan" id="appQuote"><img src="./img/quote.png" class="rouletteQuote" width="256" height="169"></div>
+   
+      <?php if($user): ?>
+      <div class="span4">
+        <div id="roulette">
+          <div id="rouletteBackground"></div>
+          <div id="rouletteRotater"></div>
+          <div id="rouletteCrosshair"></div>        
+        </div>
+      </div>
+
+      <?php else: ?>    
+        <div class="span4" id="appIcon"><img src="./img/256.png" width="256" height="256"></div>
+      <?php endif;?>
+
     <div class="span4" id="downloadArea" style="margin-left:0px; margin-top: 90px;">
       <?php if($user): ?>
         <a class="btn btn-large btn-primary" id="play" href="">Play Social Roulette</a>
@@ -79,7 +122,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       <?php endif;?>
       
     </div>
-    <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
+    <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px" id="result">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
     
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">The Story</div>
@@ -113,25 +156,88 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
   <script src="javascript/theme.js"></script>
 
   <script>
+    var returnMess = "";
+    var tickSnd = new Audio("animation/tick.wav"); // buffers automatically when created
+    tickSnd.addEventListener('ended', function() {
+        this.currentTime = 0;
+    }, false);
     
-    $("#play").click(function() {
+    var rotation = 0;
+    var speed = 20;
+    var ticks = 0;
+    var force = 0;
+    
+    var finished = false;
+    
+    function finish(){
+      finished = true;
       
+      if(ticks <= 4){
+        console.log("looser");
+      } else {
+        console.log("WINNER");
+      }
+      
+      $("#result").html(returnMess);
+
+    }
+    
+    function update(){
+      if(!finished){
+        force += speed;
+      
+        if(speed < 2 && (tickValue > ticks || (ticks == 5 && tickValue < 5))) {
+          finish();
+          return;
+        };
+      
+          rotation += force;
+          rotation = rotation % 360;
+      
+          tickValue = Math.floor((rotation/360)*6);
+          if(tickValue > ticks || (ticks == 5 && tickValue < 5)){       
+            rotation -= force;
+            rotation = rotation % 360;
+
+            if(force > 10){
+              force = speed*1.5;
+              ticks++;
+              ticks = ticks%6;
+              if(tickSnd.currentTime == 0 ){
+                tickSnd.play();
+              }
+           }  
+        } else {
+          force = 0;
+        }
+      
+      
+        speed *= 0.997;
+        rotate(rotation);      
+      }
+    
+      function rotate( deg){
+        $("#rouletteRotater").css("-webkit-transform","rotate("+deg+"deg)");
+        $("#rouletteRotater").css("-ms-transform","rotate("+deg+"deg)");
+        $("#rouletteRotater").css("transform","rotate("+deg+"deg)");
+      }      
+    }
+
+    
+    $("#play").click(function() {      
       //do animation stuff here      
+
       $.ajax({
         url: "/play.php",
-        success: function(data) {
-          var res = $("#result");
-          console.log(data);
-
-          //not logged in
+        success: function(data) {          
           if(data === "503") {
 
             window.location.href = "http://socialroulette.net/";
           
           } else {            
-                      
-            //SHOW RESULTS
-            $(res).html(data);
+            var loop = setInterval(function(){update()},30);
+            rotation =   Math.random() * (3*360/6 - (-2*360/6)) + (-2*360/6); 
+            returnMess = data;          
           }
         }
       });
