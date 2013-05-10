@@ -116,7 +116,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
 
     <div class="span4" id="downloadArea" style="margin-left:0px; margin-top: 90px;">
       <?php if($user): ?>
-        <a class="btn btn-large btn-primary" id="play" href="">Play Social Roulette</a>
+        <a class="btn btn-large btn-primary" id="play" href="">Play Social Roulette Now</a>
       <?php else: ?>
         <a class="btn btn-large btn-primary" href="<?php echo $loginUrl?>">Sign in to play Social Roulette</a>
       <?php endif;?>
