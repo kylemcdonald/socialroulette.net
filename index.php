@@ -1,7 +1,7 @@
 <?php
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
-require 'facebook-php-sdk/src/facebook.php';
+require 'facebooksdk/src/facebook.php';
 
 //Get Path
 $path = explode('/',str_replace('?'.$_SERVER['QUERY_STRING'],'',$_SERVER['REQUEST_URI']));

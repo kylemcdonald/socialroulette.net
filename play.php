@@ -2,7 +2,7 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-require 'facebook-php-sdk/src/facebook.php';
+require 'facebooksdk/src/facebook.php';
 
 $facebook = new Facebook(array(
   'appId'  => '283583331777209',
