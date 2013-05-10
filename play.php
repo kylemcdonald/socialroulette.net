@@ -12,13 +12,13 @@ $facebook = new Facebook(array(
 ));
   
 $user = $facebook->getUser();
-print_r(Config::appId);
 
 if ($user) {
   try {
     // Proceed knowing you have a logged in user who's authenticated.
     $user_profile = $facebook->api('/me');
   } catch (FacebookApiException $e) {
+    print_r($e);
     error_log($e);
     $user = null;
   }
