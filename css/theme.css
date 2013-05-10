@@ -1,0 +1,723 @@
+html {
+	margin: 0;
+}
+body {
+	position: relative;
+	background-color: #dfe3ee;
+	-webkit-font-smoothing-smoothing: antialiased;
+	font-family: 'Lato', sans-serif !important;
+	font-size: 15px;
+}
+
+@media (max-width: 979px) {
+	body { padding-top: 0px !important; }
+}
+
+a {
+color:#3b5998;
+}
+a:hover {
+	text-decoration: none;
+}
+input[type="text"], 
+input[type="password"], 
+input[type="submit"],
+textarea {
+	font-family: 'Lato', Helvetica;
+}
+
+/* Navbar
+-------------------------------------------------- */
+body.pull_top {
+    padding-top: 0px !important;
+}
+header {
+    background: rgba(0,0,0,.6) !important;
+}
+.navbar.navbar-static-top {
+    margin-bottom: 35px;
+}
+.navbar.transparent.navbar-inverse .navbar-inner {
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgb(88, 88, 88);
+}
+.navbar.transparent.navbar-inverse .navbar-inner .container {
+}
+.navbar.navbar-inverse .navbar-inner {  
+    background: #252528;    
+}
+.navbar.navbar-inverse .navbar-inner.sticky {
+    background: rgba(0,0,0,0.8);
+    border-bottom: 1px solid #252525;
+}
+.navbar-inverse .navbar-inner.sticky .container {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.navbar-inverse .brand {
+    color: #fff;
+}
+.navbar-inverse .nav > li > a {
+    -webkit-font-smoothing: antialiased;
+    /*color: rgb(177, 177, 177);*/
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,.5);
+    opacity: .6;
+    filter: alpha(opacity=60);
+    -webkit-transition: opacity .2s linear;
+    -moz-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+}
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .nav > li > a.active {
+    color: #fff;
+    opacity: 0.97;
+    filter: alpha(opacity=97);
+}
+.navbar-inverse .dropdown-menu {
+	background: #252528;
+}
+.navbar-inverse .nav > li > .dropdown-menu::after {
+	border-bottom: 6px solid #252528;
+}
+.navbar-inverse .dropdown-menu li > a {
+	color: #fff;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  text-decoration: none;
+}
+
+.section_header {
+	width: 100%;
+	margin-bottom: 60px;
+}
+.section_header h3 {
+	color: rgb(100, 100, 100);
+	font-weight: 300;
+	font-style: italic;
+	font-size: 27px;
+	border-bottom: 1px solid #b3b3b3;
+	padding-bottom: 0px;
+	display: inline-block;
+	margin:0;
+}
+
+.nav-collapse {
+	margin-left: 100px;
+}
+
+/* Global
+-------------------------------------------------- */
+.page_header {
+	background-color: #000;
+	color: #fff;
+	font-size: 23px;
+	display: inline-block;
+	padding: 0px 18px;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+.navbar .nav-app{
+	float: left;
+	font-size: 17px;
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+@media (min-width: 980px) {
+	
+}
+@media (max-width: 979px) {
+	.navbar.transparent.navbar-fixed-top, 
+	.navbar.home.navbar-fixed-top{
+		margin-bottom: 0px;
+	}
+	.navbar.transparent.navbar-inverse .navbar-inner {
+		
+	}
+	.navbar-inverse .nav-collapse .nav > li > a, 
+	.navbar-inverse .nav-collapse .dropdown-menu a {
+		color: #fff;
+		opacity: 0.7;
+	}
+	.navbar {
+		text-align:center;
+	}
+	.navbar .nav {
+		float: none;
+	}
+	.nav-collapse{
+		margin-left: 0px;
+	}
+	#roulettePopover{
+		display: none;
+	}
+	/*
+	.navbar .pull-right {
+		width: 100%;
+	}
+	.navbar .pull-right li
+	{
+		width: 50%;
+	}
+	.navbar .pull-right > li:nth-child(2n) {
+		float: left;
+	}
+	.navbar .pull-right > li:nth-child(2n+1) {
+		float: right;
+	}*/
+	
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+	.navbar.transparent.navbar-fixed-top, 
+	.navbar.home.navbar-fixed-top{
+		margin-bottom: -70px;
+		position: relative;
+		top: 999;
+	}
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
+
+.accordion-heading .accordion-toggle
+{
+	font-size: 17px;
+}
+
+.navbar-inner
+{
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius:0px;
+}
+
+.rouletteIcon
+{
+	vertical-align:-0%;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+.twitterIcon
+{
+	vertical-align:-3%;
+	width: 16px;
+	height: 15px;
+	margin-right: 5px;
+}
+
+.contactIcon
+{
+	vertical-align:-3%;
+	width: 16px;
+	height: 15px;
+	margin-right: 5px;
+}
+
+.popover{background-color:#252528;border:1px solid #252528; color: rgba(255,255,255,0.6); font-weight: normal; font-size: 14px;}
+.popover.bottom .arrow:after{border-bottom-color:#252528;}
+#roulettePopover .popover-title {
+	display: none;
+}
+
+.navbar .container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.myFooter
+{
+	margin-top: 40px;
+	padding-bottom: 40px;
+	border-top: 1px solid #EEE;
+}
+
+.contactInput {
+	width: 100%;
+	margin-bottom: 0px !important;
+}
+
+.contactText
+{
+	height: 40px !important;
+}
+
+.rouletteButton
+{
+	color: #fff;
+	background: #252528;
+	font-size: 15px;
+	padding: 8px 18px;
+	border: 0 none;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	-webkit-transition: background linear .2s, box-shadow linear .2s;
+	-moz-transition: background linear .2s, box-shadow linear .2s;
+	-o-transition: background linear .2s, box-shadow linear .2s;
+	transition: background linear .2s, box-shadow linear .2s;
+}
+
+.rouletteButton:hover
+{
+	background: #187CCC;
+}
+
+.playButton
+{
+	text-align: center;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	background: #3b5998;
+}
+
+.playButton:hover
+{
+	background: #083D94;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.alert-inline
+{
+	display: inline-block;
+	margin-bottom: 0px;
+	vertical-align: middle;
+}
+
+.navbar-roulette .navbar-inner
+{
+	border: 0px;
+	background: #3b5998 !important;
+}
+
+.navbar-roulette .popover{background-color:#3b5998;border:1px solid #3b5998; color: white; font-weight: normal; font-size: 14px;}
+.navbar-roulette .popover.bottom .arrow:after{border-bottom-color:#3b5998;}
+
+.navbar-roulette .navbar-inner
+{
+	border: 0px;
+	background: #252528 !important;
+}
+
+.navbar-roulette .popover{background-color:#252528;border:1px solid #252528; color: white; font-weight: normal; font-size: 14px;}
+.navbar-roulette .popover.bottom .arrow:after{border-bottom-color:#252528;}
+
+.btn-navbar
+{
+	background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-navbar:hover
+{
+	background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.roulette-title-background
+{
+	background-color:#f7f7f7;
+}
+
+.quoteLeft
+{
+	color: black;
+	text-shadow: 1px 1px 1px #91999d;
+	font-size: 30px;
+	text-align: center;
+}
+
+.rouletteQuote
+{
+	width: 256px; height: 169px; margin-top: 35px; margin-left: 30px;
+}
+
+@media (max-width: 767px) {
+	.appStoreBadge
+	{
+		margin-top: 10px;
+	}
+	.rouletteQuoteSpan
+	{
+		display: none !important;
+	}
+}
+
+.typesTable li {
+	list-style-type: none;
+	padding-right: 4px;
+	list-style-position:inside;
+	display: inline-block;
+}
+
+.typesTable div {
+	text-align: left;
+}
+
+.typesTable ul {
+	display: inline-block;
+	margin: 0px 0px 0px 25px;
+}
+
+.typesTable {
+	text-align:center;
+}
+
+.platformsTable div {
+	text-align: left;
+}
+
+.platformsTable ul {
+	display: inline-block;
+	margin: 10px 0px 0px 25px;
+}
+
+.platformsTable li {
+	list-style-type: none;
+	padding-right: 4px;
+	list-style-position:inside;
+	display: inline-block;
+}
+
+.sprite-Abbreviation{ background-position: 0 0 !important; width: 14px; height: 14px; } 
+.sprite-Annotation{ background-position: -39px 0 !important; width: 14px; height: 14px; } 
+.sprite-Attribute{ background-position: -78px 0 !important; width: 14px; height: 14px; } 
+.sprite-Axiom{ background-position: -117px 0 !important; width: 14px; height: 14px; } 
+.sprite-Binding{ background-position: -156px 0 !important; width: 14px; height: 14px; } 
+.sprite-Category{ background-position: -195px 0 !important; width: 14px; height: 14px; } 
+.sprite-Class{ background-position: -234px 0 !important; width: 14px; height: 14px; } 
+.sprite-Command{ background-position: -273px 0 !important; width: 14px; height: 14px; } 
+.sprite-Constant{ background-position: -312px 0 !important; width: 14px; height: 14px; } 
+.sprite-Constructor{ background-position: -351px 0 !important; width: 14px; height: 14px; } 
+.sprite-Define{ background-position: -390px 0 !important; width: 14px; height: 14px; } 
+.sprite-Directive{ background-position: -429px 0 !important; width: 14px; height: 14px; } 
+.sprite-Element{ background-position: -468px 0 !important; width: 14px; height: 14px; } 
+.sprite-Entry{ background-position: -507px 0 !important; width: 14px; height: 14px; } 
+.sprite-Enum{ background-position: -546px 0 !important; width: 14px; height: 14px; } 
+.sprite-Error{ background-position: -585px 0 !important; width: 14px; height: 14px; } 
+.sprite-Event{ background-position: -624px 0 !important; width: 14px; height: 14px; } 
+.sprite-Exception{ background-position: -663px 0 !important; width: 14px; height: 14px; } 
+.sprite-Field{ background-position: -702px 0 !important; width: 14px; height: 14px; } 
+.sprite-File{ background-position: -741px 0 !important; width: 14px; height: 14px; } 
+.sprite-Filter{ background-position: -780px 0 !important; width: 14px; height: 14px; } 
+.sprite-Framework{ background-position: -819px 0 !important; width: 14px; height: 14px; } 
+.sprite-Function{ background-position: -858px 0 !important; width: 14px; height: 14px; } 
+.sprite-Global{ background-position: -897px 0 !important; width: 14px; height: 14px; } 
+.sprite-Guide{ background-position: -936px 0 !important; width: 16px; height: 16px; } 
+.sprite-Inductive{ background-position: -977px 0 !important; width: 14px; height: 14px; } 
+.sprite-Instance{ background-position: -1016px 0 !important; width: 14px; height: 14px; } 
+.sprite-Interface{ background-position: -1055px 0 !important; width: 14px; height: 14px; } 
+.sprite-Lemma{ background-position: -1094px 0 !important; width: 14px; height: 14px; } 
+.sprite-Library{ background-position: -1133px 0 !important; width: 14px; height: 14px; } 
+.sprite-Macro{ background-position: -1172px 0 !important; width: 14px; height: 14px; } 
+.sprite-Method{ background-position: -1211px 0 !important; width: 14px; height: 14px; } 
+.sprite-Mixin{ background-position: -1250px 0 !important; width: 14px; height: 14px; } 
+.sprite-Module{ background-position: -1289px 0 !important; width: 14px; height: 14px; } 
+.sprite-Namespace{ background-position: -1328px 0 !important; width: 14px; height: 14px; } 
+.sprite-NewSnippet{ background-position: -1367px 0 !important; width: 16px; height: 16px; } 
+.sprite-Notation{ background-position: -1408px 0 !important; width: 14px; height: 14px; } 
+.sprite-Object{ background-position: -1447px 0 !important; width: 14px; height: 14px; } 
+.sprite-Operator{ background-position: -1486px 0 !important; width: 14px; height: 14px; } 
+.sprite-Option{ background-position: -1525px 0 !important; width: 14px; height: 14px; } 
+.sprite-Package{ background-position: -1564px 0 !important; width: 14px; height: 14px; } 
+.sprite-Parameter{ background-position: -1603px 0 !important; width: 14px; height: 14px; } 
+.sprite-Projection{ background-position: -1642px 0 !important; width: 14px; height: 14px; } 
+.sprite-Property{ background-position: -1681px 0 !important; width: 14px; height: 14px; } 
+.sprite-Protocol{ background-position: -1720px 0 !important; width: 14px; height: 14px; } 
+.sprite-Record{ background-position: -1759px 0 !important; width: 14px; height: 14px; } 
+.sprite-Sample{ background-position: -1798px 0 !important; width: 16px; height: 16px; } 
+.sprite-Section{ background-position: -1839px 0 !important; width: 14px; height: 14px; } 
+.sprite-Service{ background-position: -1878px 0 !important; width: 14px; height: 14px; } 
+.sprite-Snippet{ background-position: -1917px 0 !important; width: 16px; height: 16px; } 
+.sprite-Struct{ background-position: -1958px 0 !important; width: 14px; height: 14px; } 
+.sprite-Style{ background-position: -1997px 0 !important; width: 14px; height: 14px; } 
+.sprite-Tactic{ background-position: -2036px 0 !important; width: 14px; height: 14px; } 
+.sprite-Tag{ background-position: -2075px 0 !important; width: 14px; height: 14px; } 
+.sprite-Trait{ background-position: -2114px 0 !important; width: 14px; height: 14px; } 
+.sprite-Type{ background-position: -2153px 0 !important; width: 14px; height: 14px; } 
+.sprite-Union{ background-position: -2192px 0 !important; width: 14px; height: 14px; } 
+.sprite-Unknown{ background-position: -2231px 0 !important; width: 14px; height: 14px; } 
+.sprite-Value{ background-position: -2270px 0 !important; width: 14px; height: 14px; } 
+.sprite-Variable{ background-position: -2309px 0 !important; width: 14px; height: 14px; } 
+.sprite-Web{ background-position: -2348px 0 !important; width: 16px; height: 16px; } 
+
+.platform-Google{ background-position: 0 0px !important; width: 16px; height: 16px; } 
+.platform-Mac{ background-position: -41px 0px !important; width: 16px; height: 16px; } 
+.platform-Other{ background-position: -82px 0px !important; width: 16px; height: 16px; } 
+.platform-StackOverflow{ background-position: -123px 0px !important; width: 16px; height: 16px; } 
+.platform-actionscript{ background-position: -164px 0px !important; width: 16px; height: 16px; } 
+.platform-akka{ background-position: -205px 0px !important; width: 16px; height: 16px; } 
+.platform-android{ background-position: -246px 0px !important; width: 16px; height: 16px; } 
+.platform-angularjs{ background-position: -287px 0px !important; width: 16px; height: 16px; } 
+.platform-arduino{ background-position: -328px 0px !important; width: 16px; height: 16px; } 
+.platform-backbone{ background-position: -369px 0px !important; width: 16px; height: 16px; } 
+.platform-bootstrap{ background-position: -410px 0px !important; width: 16px; height: 16px; } 
+.platform-bourbon{ background-position: -451px 0px !important; width: 16px; height: 16px; } 
+.platform-c{ background-position: -492px 0px !important; width: 16px; height: 16px; } 
+.platform-cakephp{ background-position: -533px 0px !important; width: 16px; height: 16px; } 
+.platform-cappuccino{ background-position: -574px 0px !important; width: 16px; height: 16px; } 
+.platform-clojure{ background-position: -615px 0px !important; width: 16px; height: 16px; } 
+.platform-cocos2d{ background-position: -656px 0px !important; width: 16px; height: 16px; } 
+.platform-cocos2dx{ background-position: -697px 0px !important; width: 16px; height: 16px; } 
+.platform-codeigniter{ background-position: -738px 0px !important; width: 16px; height: 16px; } 
+.platform-coffee{ background-position: -779px 0px !important; width: 16px; height: 16px; } 
+.platform-compass{ background-position: -820px 0px !important; width: 16px; height: 16px; } 
+.platform-corona{ background-position: -861px 0px !important; width: 16px; height: 16px; } 
+.platform-cpp{ background-position: -902px 0px !important; width: 16px; height: 16px; } 
+.platform-css{ background-position: -943px 0px !important; width: 16px; height: 16px; } 
+.platform-roulette{ background-position: -984px 0px !important; width: 16px; height: 16px; } 
+.platform-django{ background-position: -1025px 0px !important; width: 16px; height: 16px; } 
+.platform-drupal{ background-position: -1066px 0px !important; width: 16px; height: 16px; } 
+.platform-elisp{ background-position: -1107px 0px !important; width: 16px; height: 16px; } 
+.platform-ember{ background-position: -1148px 0px !important; width: 16px; height: 16px; } 
+.platform-erlang{ background-position: -1189px 0px !important; width: 16px; height: 16px; } 
+.platform-extjs{ background-position: -1230px 0px !important; width: 16px; height: 16px; } 
+.platform-gl2{ background-position: -1271px 0px !important; width: 16px; height: 16px; } 
+.platform-gl4{ background-position: -1312px 0px !important; width: 16px; height: 16px; } 
+.platform-glib{ background-position: -1353px 0px !important; width: 16px; height: 16px; } 
+.platform-go{ background-position: -1394px 0px !important; width: 16px; height: 16px; } 
+.platform-groovy{ background-position: -1435px 0px !important; width: 16px; height: 16px; } 
+.platform-haskell{ background-position: -1476px 0px !important; width: 16px; height: 16px; } 
+.platform-html{ background-position: -1517px 0px !important; width: 16px; height: 16px; } 
+.platform-iphone{ background-position: -1558px 0px !important; width: 16px; height: 16px; } 
+.platform-jQuery{ background-position: -1599px 0px !important; width: 16px; height: 16px; } 
+.platform-java{ background-position: -1640px 0px !important; width: 16px; height: 16px; } 
+.platform-javafx{ background-position: -1681px 0px !important; width: 16px; height: 16px; } 
+.platform-javascript{ background-position: -1722px 0px !important; width: 16px; height: 16px; } 
+.platform-joomla{ background-position: -1763px 0px !important; width: 16px; height: 16px; } 
+.platform-jqueryui{ background-position: -1804px 0px !important; width: 16px; height: 16px; } 
+.platform-kobold2d{ background-position: -1845px 0px !important; width: 16px; height: 16px; } 
+.platform-laravel{ background-position: -1886px 0px !important; width: 16px; height: 16px; } 
+.platform-less{ background-position: -1927px 0px !important; width: 16px; height: 16px; } 
+.platform-lisp{ background-position: -1968px 0px !important; width: 16px; height: 16px; } 
+.platform-loroulette{ background-position: -2009px 0px !important; width: 16px; height: 16px; } 
+.platform-lua{ background-position: -2050px 0px !important; width: 16px; height: 16px; } 
+.platform-manPages{ background-position: -2091px 0px !important; width: 16px; height: 16px; } 
+.platform-mongodb{ background-position: -2132px 0px !important; width: 16px; height: 16px; } 
+.platform-mono{ background-position: -2173px 0px !important; width: 16px; height: 16px; } 
+.platform-mysql{ background-position: -2214px 0px !important; width: 16px; height: 16px; } 
+.platform-nodejs{ background-position: -2255px 0px !important; width: 16px; height: 16px; } 
+.platform-perl{ background-position: -2296px 0px !important; width: 16px; height: 16px; } 
+.platform-php{ background-position: -2337px 0px !important; width: 16px; height: 16px; } 
+.platform-playjava{ background-position: -2378px 0px !important; width: 16px; height: 16px; } 
+.platform-playscala{ background-position: -2419px 0px !important; width: 16px; height: 16px; } 
+.platform-processing{ background-position: -2460px 0px !important; width: 16px; height: 16px; } 
+.platform-prototype{ background-position: -2501px 0px !important; width: 16px; height: 16px; } 
+.platform-psql{ background-position: -2542px 0px !important; width: 16px; height: 16px; } 
+.platform-python{ background-position: -2583px 0px !important; width: 16px; height: 16px; } 
+.platform-qt{ background-position: -2624px 0px !important; width: 16px; height: 16px; } 
+.platform-rails{ background-position: -2665px 0px !important; width: 16px; height: 16px; } 
+.platform-redis{ background-position: -2706px 0px !important; width: 16px; height: 16px; } 
+.platform-ruby{ background-position: -2747px 0px !important; width: 16px; height: 16px; } 
+.platform-rubyGems{ background-position: -2788px 0px !important; width: 16px; height: 16px; } 
+.platform-rubymotion{ background-position: -2829px 0px !important; width: 16px; height: 16px; } 
+.platform-sass{ background-position: -2870px 0px !important; width: 16px; height: 16px; } 
+.platform-scala{ background-position: -2911px 0px !important; width: 16px; height: 16px; } 
+.platform-sencha{ background-position: -2952px 0px !important; width: 16px; height: 16px; } 
+.platform-sparrow{ background-position: -2993px 0px !important; width: 16px; height: 16px; } 
+.platform-sqlite{ background-position: -3034px 0px !important; width: 16px; height: 16px; } 
+.platform-svg{ background-position: -3075px 0px !important; width: 16px; height: 16px; } 
+.platform-symfony{ background-position: -3116px 0px !important; width: 16px; height: 16px; } 
+.platform-tcl{ background-position: -3157px 0px !important; width: 16px; height: 16px; } 
+.platform-titanium{ background-position: -3198px 0px !important; width: 16px; height: 16px; } 
+.platform-twisted{ background-position: -3239px 0px !important; width: 16px; height: 16px; } 
+.platform-typo3{ background-position: -3280px 0px !important; width: 16px; height: 16px; } 
+.platform-underscore{ background-position: -3321px 0px !important; width: 16px; height: 16px; } 
+.platform-unity3d{ background-position: -3362px 0px !important; width: 16px; height: 16px; } 
+.platform-vim{ background-position: -3403px 0px !important; width: 16px; height: 16px; } 
+.platform-vsphere{ background-position: -3444px 0px !important; width: 16px; height: 16px; } 
+.platform-wordpress{ background-position: -3485px 0px !important; width: 16px; height: 16px; } 
+.platform-xslt{ background-position: -3526px 0px !important; width: 16px; height: 16px; } 
+.platform-xul{ background-position: -3567px 0px !important; width: 16px; height: 16px; } 
+.platform-yii{ background-position: -3608px 0px !important; width: 16px; height: 16px; } 
+.platform-yui{ background-position: -3649px 0px !important; width: 16px; height: 16px; } 
+.platform-zend{ background-position: -3690px 0px !important; width: 16px; height: 16px; } 
+
+
+@media only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi) {
+	.typesTable li {
+		background-size: 2364px 16px !important;
+	}
+	.platformsTable li {
+		background-size: 3706px 16px !important;
+	}
+}
+
+.reposition2
+{
+	position: relative;
+	top: -2px;
+}
+
+.reposition1
+{
+	position: relative;
+	top: -1px;
+}
+
+.userGuideLink
+{
+	color: white;
+	color: rgba(255,255,255,0.7);
+	text-decoration: underline;
+	-webkit-transition: color .2s linear;
+	-moz-transition: color .2s linear;
+	transition: color .2s linear;
+}
+
+.userGuideLink:hover
+{
+	color: white;
+	text-decoration: underline;
+}
+
+.screenshot
+{
+	display: inline-block;
+	padding: 5px;
+	padding-top: 0px;
+}
+
+.screenshot img
+{
+	width: 206px;
+	height: 131px;
+}
+
+.dlead
+{
+	font-size: 26px;
+	font-weight: 200;
+	line-height: 35px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.dmarginbottom
+{
+	margin-bottom: 15px;
+}
+
+.dmargintop
+{
+	margin-top: 45px;
+}
+
+.justify
+{
+	text-align: justify;
+	line-height: 1.35em;
+}
+
+.maintext
+{
+	max-width:750px; margin-left: auto; margin-right: auto;
+}
+
+.drowx
+{
+	display: inline-block;
+	margin-left: 0px;
+	width: 19% !important;
+	min-width: 170px !important;
+}
+
+.platformsTable .drowx
+{
+	min-width: 200px !important;
+}
+
+.platformsTable, .typesTable
+{
+	max-width: 1000px !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.typesTable
+{
+	max-width: 500px;
+}
+
+.pluginrow
+{
+	display: inline-block;
+	width: 15% !important;
+	min-width: 140px !important;
+	margin-top: 20px;
+}
+
+.highlighted
+{
+	border: 1px solid #3b5998;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius:5px;
+	padding: 3px;
+	color: #3b5998;
+	font-weight: bold;
+}
+
+.featureList
+{
+	display: inline-block;
+	min-width: 300px;
+	text-align: left;
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+	.featureList {
+		min-width: 280px;
+	}
+}
+
+.contactInput {
+	box-sizing: border-box;  
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	max-width: 100%;
+	min-width: 100%;
+}
+
+hr.roulette {
+	margin-top: 40px;
+	max-width: 480px;
+	margin: 4.5em auto 4.0em auto;
+	background-color: #969191;
+	height: 1px;
+	border: 0px;
+	clear: both;
+	position: relative;
+}
+
+hr.roulette::after {
+	background: #dfe3ee url("../img/hr.png") no-repeat 50% 50%;
+	content: " ";
+	left: 50%;
+	margin-left: -30px;
+	height: 17px;
+	position: absolute;
+	top: -8px;
+	width: 60px;
+	background-size: 16px 15px;
+}
