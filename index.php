@@ -45,35 +45,35 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     
   <style type="text/css">
     #play {background: red;}
+  
   #roulette {
-    width: 400px;
-    height: 400px;
+    width: 256px;
+    height: 256px;
     margin:0 auto;
-    top:100px;
+    top:0px;
     position:relative;
-    
-          
   }
+
   #rouletteBackground{
     position:absolute;
     background-image: url("animation/roul1.png"); 
-    background-size:400px;
-    width: 400px;
-    height: 400px;
+    background-size:256px;
+    width: 256px;
+    height: 256px;
   }
   #rouletteRotater{
     position:absolute;
     background-image: url("animation/roul2.png"); 
-    background-size:400px;
-    width: 400px;
-    height: 400px;
+    background-size:256px;
+    width: 256px;
+    height: 256px;
   }
   #rouletteCrosshair{
     position:absolute;
     background-image: url("animation/crosshgair.png"); 
-    background-size:400px;
-    width: 400px;
-    height: 400px;
+    background-size:256px;
+    width: 256px;
+    height: 256px;
   }    
   </style>  
 </head>
@@ -99,16 +99,20 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
         </div>
     </div>
     <div style="padding-top: 30px; padding-bottom: 20px; text-align: center;" class="roulette-title-background row-fluid">
-    <div class="span4 rouletteQuoteSpan" id="appQuote"><img src="./img/quote.png" class="rouletteQuote" width="256" height="169"></div>
-    
-    <!-- <div class="span4" id="appIcon"><img src="./img/256.png" width="256" height="256"></div> -->
-    
-    <div id="roulette" class="span4" id="appIcon">
-      <div id="rouletteBackground"></div>
-      <div id="rouletteRotater"></div>
-      <div id="rouletteCrosshair"></div>
-      
-    </div>
+       <div class="span4 rouletteQuoteSpan" id="appQuote"><img src="./img/quote.png" class="rouletteQuote" width="256" height="169"></div>
+   
+      <?php if($user): ?>
+      <div class="span4">
+        <div id="roulette">
+          <div id="rouletteBackground"></div>
+          <div id="rouletteRotater"></div>
+          <div id="rouletteCrosshair"></div>        
+        </div>
+      </div>
+
+      <?php else: ?>    
+        <div class="span4" id="appIcon"><img src="./img/256.png" width="256" height="256"></div>
+      <?php endif;?>
 
     <div class="span4" id="downloadArea" style="margin-left:0px; margin-top: 90px;">
       <?php if($user): ?>
