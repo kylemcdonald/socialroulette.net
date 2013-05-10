@@ -130,11 +130,13 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     </div>
     <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px" id="result">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
     
+    <div class="container center">
     <div class="dlead dmargintop dmarginbottom">Testimonials</div>
     <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="http://gawker.com/">Gawker</a></small></h4></div>
     <div class="justify maintext"><h4>"Man, if only these hackers could make up their mind." <small><a href="https://twitter.com/bruces">Bruce Sterling</a></small></h4></div>
     <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">Jon Gruber</a></small></h4></div>
     <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="http://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
+    </div>
     
     <hr class="roulette">
     <div class="container center">
@@ -145,7 +147,8 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     </div>
     
     <hr class="roulette">    
-    <div class="dlead dmarginbottom">Rules</div>
+    <div class="container center">
+    <div class="dlead dmargintop dmarginbottom">Rules</div>
     <div class="justify maintext">There are a few basic rules for playing a successful game of Social Roulette.</div>
     <div class="justify maintext">
     <ol>
@@ -153,13 +156,16 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <li>You may only play <span class="highlighted">once a day</span>.</li>
     </ol>
     </div>
+    </div>
     
-    <hr class="roulette">    
-    <div class="dlead dmarginbottom">T-Shirts</div>
+    <hr class="roulette">  
+    <div class="container center">  
+    <div class="dlead dmargintop dmarginbottom">T-Shirts</div>
     <div class="justify maintext">Have you survived Social Roulette? Why not flaunt it with a t-shirt?</div>
     <div class="center"><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440" style="margin:40px"/></a></div>
+    </div>
     
-    <div class="myFooter"></div>      
+    <div class="myFooter">2013</div>      
   </div>
   <script src="javascript/jquery.min.js"></script>
   <script src="javascript/bootstrap.min.js"></script>
