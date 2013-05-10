@@ -156,7 +156,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     var tickSnd = new Audio("animation/tick.wav"); // buffers automatically when created
     tickSnd.addEventListener('ended', function() {
         this.currentTime = 0;
-//        this.play();
     }, false);
     
     var rotation = 0;
@@ -193,7 +192,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       
           tickValue = Math.floor((rotation/360)*6);
           if(tickValue > ticks || (ticks == 5 && tickValue < 5)){       
-            //f = rotation - ticks * 1/6 * 360;
             rotation -= force;
             rotation = rotation % 360;
 
@@ -202,7 +200,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
               ticks++;
               ticks = ticks%6;
               if(tickSnd.currentTime == 0 ){
-  //              tickSnd.load();
                 tickSnd.play();
               }
            }  
@@ -212,11 +209,14 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       
       
         speed *= 0.997;
-        rotate(rotation);
-        //console.log(speed)
+        rotate(rotation);      
       }
-//        setTimeout(update, 100);
-      
+    
+      function rotate( deg){
+        $("#rouletteRotater").css("-webkit-transform","rotate("+deg+"deg)");
+        $("#rouletteRotater").css("-ms-transform","rotate("+deg+"deg)");
+        $("#rouletteRotater").css("transform","rotate("+deg+"deg)");
+      }      
     }
 
     
