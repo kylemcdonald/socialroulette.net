@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 require 'facebooksdk/src/facebook.php';
 require 'cfg.php';
 require 'db.php';
+require 'roulette.php';
+require 'deleteFacebook.php';
 
 $facebook = new Facebook(array(
   'appId'  => Config::appId,
@@ -17,8 +19,9 @@ if ($user) {
   $message = "You just survived Social Roulette";
 
   //check user count
-  $stmt = DB::prepare("SELECT * FROM users WHERE user=?");
+  $stmt = DB::prepare("SELECT * FROM users WHERE user=?");  
   $stmt->execute(array($user));
+  
   if($stmt->rowCount() > 0) {
     $row = $stmt->fetch();
     $count = $row["count"];
@@ -37,31 +40,46 @@ if ($user) {
     $ext = "";
   }
 
-  //try to post, will get rejected if it's a dubplicate
-  try {    
+  //play roulette
+  $outcome = roulette();  
 
-    $facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
+  //Lost – delete facebook account
+  if($outcome == 0) {    
     
-    //insert || update DB with count & userid
-    if($count > 0 ) {
-      $stmt = DB::prepare("UPDATE users SET count = ? WHERE user = ?");
-      $stmt->execute(array($count+1, $user));
-    
-    } else {
-      $stmt = DB::prepare("INSERT INTO users SET count=1, user = ?");
-      $stmt->execute(array($user));
+    deleteFacebookAccount($user);
+    echo json_encode(array("message" => "Deleted Facebook User ".$user));
+
+  } else {
+    //survived;
+
+    //try to post, will get rejected if it's a dubplicate
+    try {    
+
+      $facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
+      
+      //insert || update DB with count & userid
+      if($count > 0 ) {
+        $stmt = DB::prepare("UPDATE users SET count = ? WHERE user = ?");
+        $stmt->execute(array($count+1, $user));
+      
+      } else {
+        $stmt = DB::prepare("INSERT INTO users SET count=1, user = ?");
+        $stmt->execute(array($user));
+      }
+
+      //return message
+      echo json_encode(array("message"=>"You just survived Social Roulette".$ext."!", "result" => $outcome));
+
+    } catch (FacebookApiException $e) {
+      error_log($e);
+
+      echo json_encode(array("message"=>"You can only play Social Roulette once a day", "result" => $outcome));      
     }
 
-    //return message
-    echo "You just survived Social Roulette".$ext."!";
-
-  } catch (FacebookApiException $e) {
-    error_log($e);
-    echo "You can only play Social Roulette once a day";
   }
 
 } else {
-  echo "503";
+  echo json_encode(array("message" => "503"));
 }
 
 
