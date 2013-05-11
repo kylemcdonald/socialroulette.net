@@ -156,7 +156,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="justify maintext">
     <ol>
     <li>You must play with your <span class="highlighted">own account</span>.</li>
-    <li>You must only play <span class="highlighted">once a day</span>.</li>
+    <li>You may only play <span class="highlighted">once a day</span>.</li>
     </ol>
     </div>
     </div>
