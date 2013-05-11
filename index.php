@@ -265,8 +265,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     $("#play").click(function() {      
       //do animation stuff here      
 
-      $("#play").text("Playing...").unbind("click");
-
       $.ajax({
         url: "/play.php",
         success: function(data) {          
@@ -277,9 +275,11 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
             window.location.href = "http://socialroulette.net/";
           
           } else if (obj.message === "505") {
-            $("#result").html("You can only play Social Roulette");
+            $("#result").html("You can only play Social Roulette once a day");
 
-          } else {           
+          } else {     
+            $("#play").text("Playing...").unbind("click");
+      
             var loop = setInterval(function(){update()},30);
             rotation = obj.result;
             returnMess = obj.message;
