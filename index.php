@@ -275,7 +275,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
             window.location.href = "http://socialroulette.net/";
           
           } else if (obj.message === "505") {
-            $("#result").html("You can only play Social Roulette once a day");
+            $("#result").html("You can only play Social Roulette once a day.");
 
           } else {     
             $("#play").text("Playing...").unbind("click");
