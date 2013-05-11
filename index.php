@@ -153,7 +153,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="justify maintext">
     <ol>
     <li>You must play with your <span class="highlighted">own account</span>.</li>
-    <li>You may only play <span class="highlighted">once a day</span>.</li>
+    <li>You must only play <span class="highlighted">once a day</span>.</li>
     </ol>
     </div>
     </div>
@@ -162,10 +162,9 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="container center">  
     <div class="dlead dmargintop dmarginbottom">T-Shirts</div>
     <div class="justify maintext">Have you survived Social Roulette? Why not flaunt it with a t-shirt?</div>
-    <div class="center"><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440" style="margin:40px"/></a></div>
+    <div><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440" style="margin:40px 0"/></a></div>
     </div>
     
-    <div class="myFooter">2013</div>      
   </div>
   <script src="javascript/jquery.min.js"></script>
   <script src="javascript/bootstrap.min.js"></script>
