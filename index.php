@@ -134,7 +134,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="dlead dmargintop dmarginbottom">Testimonials</div>
     <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="http://gawker.com/">Gawker</a></small></h4></div>
     <div class="justify maintext"><h4>"Man, if only these hackers could make up their mind." <small><a href="https://twitter.com/bruces">Bruce Sterling</a></small></h4></div>
-    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">Jon Gruber</a></small></h4></div>
+    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">John Gruber</a></small></h4></div>
     <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="http://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
     </div>
     
