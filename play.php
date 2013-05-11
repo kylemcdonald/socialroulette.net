@@ -52,6 +52,11 @@ if ($user) {
   } else {
     //survived;
 
+    if($count >= 1) {
+      echo json_encode(array("message" => "505"));
+
+    } else {
+
     //try to post, will get rejected if it's a dubplicate
     try {    
 
@@ -70,14 +75,16 @@ if ($user) {
       //return message
       echo json_encode(array("message"=>"You just survived Social Roulette".$ext."!", "result" => $outcome));
 
-    } catch (FacebookApiException $e) {
-      error_log($e);
+      } catch (FacebookApiException $e) {
+        error_log($e);
 
-      echo json_encode(array("message"=>"You can only play Social Roulette once a day", "result" => $outcome));      
+        echo json_encode(array("message"=>"You can only play Social Roulette once a day", "result" => $outcome));      
+      }
+
     }
 
-  }
 
+  }
 } else {
   echo json_encode(array("message" => "503"));
 }
