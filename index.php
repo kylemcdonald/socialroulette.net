@@ -92,13 +92,13 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </a>
-              <a class="brand" href="http://socialroulette.com/">
+              <a class="brand" href="http://socialroulette.net/">
                 <strong>Social Roulette</strong>
               </a>
               <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
                       <li><a href="http://twitter.com/roulettenet"><img src="./img/twitterIcon.png" class="twitterIcon">Twitter</a></li>
-                      <li><a href="mailto:info@socialroulette.com"><img src="./img/mailIcon.png" class="contactIcon">Contact</a></li>
+                      <li><a href="mailto:info@socialroulette.net"><img src="./img/mailIcon.png" class="contactIcon">Contact</a></li>
                 </ul>
             </div>
           </div>
