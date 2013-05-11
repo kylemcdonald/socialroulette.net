@@ -276,7 +276,10 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
 
             window.location.href = "http://socialroulette.net/";
           
-          } else {            
+          } else if (obj.message === "505") {
+            $("#result").html("You can only play Social Roulette");
+
+          } else {           
             var loop = setInterval(function(){update()},30);
             rotation = obj.result;
             returnMess = obj.message;
