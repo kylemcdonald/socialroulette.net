@@ -84,6 +84,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
   </style>  
 </head>
   <body>
+  
   <div class="navbar navbar-inverse navbar-roulette">
       <div class="navbar-inner">
           <div class="container">
@@ -128,7 +129,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       <?php endif;?>
       
 <br/><br/><br/>
-  <style type="text/css">#fake-like-rapper{display: inline-block;margin:0;padding:0;}#fake-like-rapper div{float:left;margin:0;padding:0;}#like-fake div.connect_widget_button_count_including, td.connect_widget_simple_including{margin:0;padding:0;}#like-fake td, td.label{font-size: 11px;text-align: left;margin:0;padding:0;}#like-fake{font-size: 11px;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;color:#333;line-height:1.28;text-align: left;direction: ltr;margin-top: 1px !important; margin-left: -2px!important;position: relative;float:left;}#like-fake .uiGrid{border: 0;border-collapse: collapse;border-spacing: 0;}#like-fake .connect_widget_button_count_count{background: white;border: 1px solid #D1D1D1;float: left;font-weight: normal;height: 14px;margin-left: 1px;min-width: 17px;padding: 1px 2px 1px 2px;text-align: center;line-height: 14px;white-space: nowrap;}#like-fake .connect_widget_button_count_nub s, #like-fake .connect_widget_button_count_nub i{border: solid transparent;border-right-color: #D7D7D7;top: 1px;display: block;position: relative;border-width: 4px 5px 4px 0;}#like-fake .connect_widget_button_count_nub i{left: 2px;top: -7px;border-right-color: white;}#like-fake .connect_widget_button_count_nub {float: left; position: relative; height: 0; width: 5px; top: -5px; left: 2px; }</style><div id="fake-like-rapper"><div class="fb-like" data-href="http://socialroulette.org" data-send="false" data-layout="button_count" data-width="48" data-show-faces="false" data-font="arial" style="width: 48px; height: 20px; overflow: hidden;"></div><div id="like-fake"><div class="connect_widget_button_count_including"><table class="uiGrid" cellspacing="0" cellpadding="0"><tbody><tr><td><div class="thumbs_up hidden_elem"></div></td><td><div class="undo hidden_elem"></div></td></tr><tr><td><div class="connect_widget_button_count_nub"><s></s><i></i></div></td><td><div class="connect_widget_button_count_count">1056</div></td></tr></tbody></table></div></div></div>
+<div class="fb-like" data-href="http://socialroulette.net/" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-font="arial"></div>
 
     </div>
     <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px" id="result">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
@@ -184,7 +185,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-
     <!-- end like -->
 
   </div>
