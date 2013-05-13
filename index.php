@@ -166,7 +166,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">FAQ</div>
     <div class="justify maintext"><h4>Can Social Roulette really delete my account?</h4></div>
-    <div class="justify maintext">Yes. While it's very difficulty to "<a href="http://www.facebook.com/help/224562897555674/">permanently delete</a>" a Facebook account, we can completely remove all your posts, friends, apps, likes, photos, and games before completely deactivating it.</div>
+    <div class="justify maintext">Yes. While it's very difficult to "<a href="http://www.facebook.com/help/224562897555674/">permanently delete</a>" a Facebook account, we can completely remove all your posts, friends, apps, likes, photos, and games before completely deactivating it.</div>
     </div>
     
     <hr class="roulette">  
