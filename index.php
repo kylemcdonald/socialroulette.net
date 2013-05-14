@@ -68,7 +68,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
   }
   #rouletteRotater{
     position:absolute;
-    background-image: url("animation/roul2.png"); 
+    background-image: url("animation/roul3.png"); 
     background-size:256px;
     width: 256px;
     height: 256px;
@@ -267,7 +267,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       //do animation stuff here      
 
       $.ajax({
-        url: "/play.php",
+        url: "/develop/play.php",
         success: function(data) {          
           obj = $.parseJSON(data);
           console.log(obj);
@@ -291,7 +291,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
 
       $(".postToFB").live("click", function() {
         $.ajax({
-          url: "/post.php",
+          url: "/develop/post.php",
           data: {post: 1},
           success: function(data) {
             if(data === "success") {
