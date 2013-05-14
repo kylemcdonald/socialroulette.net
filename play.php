@@ -14,9 +14,11 @@ $facebook = new Facebook(array(
 ));
   
 $user = $facebook->getUser();
+$now = time();
+$secSincePlayed = 0;
 
 if ($user) {  
-  
+
   //check user count
   $stmt = DB::prepare("SELECT * FROM users WHERE user=?");  
   $stmt->execute(array($user));
@@ -24,6 +26,9 @@ if ($user) {
   if($stmt->rowCount() > 0) {
     $row = $stmt->fetch();
     $count = $row["count"];
+    $lastplayed = strtotime($row["lastplayed"]);
+    $secSincePlayed = $now-$lastplayed;
+  
   } else {
     $count = 0;
   }
@@ -51,7 +56,7 @@ if ($user) {
   } else {
     //survived;
 
-    if($count >= 1) {
+    if($count >= 1 && $secSincePlayed < 86400) {
       echo json_encode(array("message" => "505"));
 
     } else {
@@ -63,11 +68,11 @@ if ($user) {
       
       //insert || update DB with count & userid
       if($count > 0 ) {
-        $stmt = DB::prepare("UPDATE users SET count = ? WHERE user = ?");
+        $stmt = DB::prepare("UPDATE users SET count = ?, lastplayed=now() WHERE user = ?");
         $stmt->execute(array($count+1, $user));
       
       } else {
-        $stmt = DB::prepare("INSERT INTO users SET count=1, user = ?");
+        $stmt = DB::prepare("INSERT INTO users SET count=1, lastplayed=now(), user = ?");
         $stmt->execute(array($user));
       }
 
