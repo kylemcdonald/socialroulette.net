@@ -169,6 +169,8 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="justify maintext">Yes. While it's very difficult to "<a href="http://www.facebook.com/help/224562897555674/">permanently delete</a>" a Facebook account, we can completely remove all your posts, friends, apps, likes, photos, and games before completely deactivating it.</div>
     </div>
     
+    <br/><br/>
+    
     <!-- Like Button -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
