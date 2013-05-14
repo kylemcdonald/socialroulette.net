@@ -15,9 +15,8 @@ $facebook = new Facebook(array(
   
 $user = $facebook->getUser();
 
-if ($user) {
-  $message = "You just survived Social Roulette";
-
+if ($user) {  
+  
   //check user count
   $stmt = DB::prepare("SELECT * FROM users WHERE user=?");  
   $stmt->execute(array($user));
@@ -58,9 +57,9 @@ if ($user) {
     } else {
 
     //try to post, will get rejected if it's a dubplicate
-    try {    
+    //try {    
 
-      $facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
+      //$facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
       
       //insert || update DB with count & userid
       if($count > 0 ) {
@@ -75,16 +74,16 @@ if ($user) {
       //return message
       echo json_encode(array("message"=>"You just survived Social Roulette".$ext."!", "result" => $outcome));
 
-      } catch (FacebookApiException $e) {
-        error_log($e);
+      // } catch (FacebookApiException $e) {
+      //   error_log($e);
 
-        echo json_encode(array("message"=>"You can only play Social Roulette once a day", "result" => $outcome));      
-      }
+      //   echo json_encode(array("message"=>"You can only play Social Roulette once a day", "result" => $outcome));      
+      // }
 
     }
 
-
   }
+
 } else {
   echo json_encode(array("message" => "503"));
 }

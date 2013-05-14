@@ -27,8 +27,7 @@ if ($user) {
   }
 }
 
-$loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp_event, publish_actions, friends_online_presence, user_online_presence, manage_notifications, manage_friendlists, create_event, ads_management, xmpp_login, read_stream, read_requests, read_mailbox, read_insights, read_friendlists, user_work_history, user_website, user_videos, user_subscriptions, user_status, user_religion_politics, user_relationship_details, user_relationships, user_questions, user_photos, user_notes, user_location, user_likes, user_interests, user_hometown, user_groups, user_education_history, user_games_activity, user_actions.video, user_actions.news, user_actions.music')); 
-
+$loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email')); 
 ?>
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -118,7 +117,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       </div>
 
       <?php else: ?>    
-        <div class="span4" id="appIcon"><img src="./img/256.png" width="256" height="256"></div>
+        <div class="span4" id="appIcon"><img src="./img/256_2.png" width="256" height="256"></div>
       <?php endif;?>
 
     <div class="span4" id="downloadArea" style="margin-left:0px; margin-top: 90px;">
@@ -212,6 +211,13 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
       
       $("#result").html(returnMess);
       $("#play").text("Done");
+  
+      if(returnMess.match(/survived/g)) {
+        //append post to FB button
+        $("<a href='' class='postToFB btn btn-primary'>Post 'I just survived Social Roulette to Facebook'</a>").insertAfter($("#result"));
+
+      }
+
     
     }
     
@@ -278,8 +284,25 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
             var loop = setInterval(function(){update()},30);
             rotation = obj.result;
             returnMess = obj.message;
+
           }
         }
+      });
+
+      $(".postToFB").live("click", function() {
+        $.ajax({
+          url: "/post.php",
+          data: {post: 1},
+          success: function(data) {
+            if(data === "success") {
+              $(".postToFB").replaceWith("<h4>Posted</h4>");
+            } else {
+              $(".postToFB").replaceWith("<h4 class='red'>You need to play to be able to post</h4>");
+            }
+          }
+        });
+
+        return false;
       });
 
       return false;
