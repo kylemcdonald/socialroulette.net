@@ -169,13 +169,6 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email, rsvp
     <div class="justify maintext">Yes. While it's very difficult to "<a href="http://www.facebook.com/help/224562897555674/">permanently delete</a>" a Facebook account, we can completely remove all your posts, friends, apps, likes, photos, and games before completely deactivating it.</div>
     </div>
     
-    <hr class="roulette">  
-    <div class="container center">  
-    <div class="dlead dmargintop dmarginbottom">T-Shirts</div>
-    <div class="justify maintext">Have you survived Social Roulette? Why not flaunt it with a t-shirt?</div>
-    <div><a href="http://skreened.com/socialroulette/i-survived-social-roulette"><img src="http://skreened.com/render-product/n/e/i/neiemzqzaafizownjsdq/i-survived-social-roulette.american-apparel-unisex-fitted-tee.black.w380h440z1.jpg" width="380" height="440" style="margin:40px 0"/></a></div>
-    </div>
-    
     <!-- Like Button -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
