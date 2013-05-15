@@ -214,8 +214,11 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
   
       if(returnMess.match(/survived/g)) {
         //append post to FB button
-        $("<a href='' class='postToFB btn btn-primary'>Post 'I just survived Social Roulette to Facebook'</a>").insertAfter($("#result"));
-      }  
+        $("<a href='' class='postToFB btn btn-primary'>Post 'I just survived Social Roulette' to Facebook</a>").insertAfter($("#result"));
+
+      }
+
+    
     }
     
     function update(){
@@ -290,12 +293,13 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       });
 
       $(".postToFB").live("click", function() {
+        $(".postToFB").text("Posting...");
         $.ajax({
           url: "/develop/post.php",
           data: {post: 1},
           success: function(data) {
             if(data === "success") {
-              $(".postToFB").replaceWith("<h4>Posted</h4>");
+              $(".postToFB").replaceWith("<h4>Posted!</h4>");
             } else {
               $(".postToFB").replaceWith("<h4 class='red'>You need to play to be able to post</h4>");
             }
