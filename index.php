@@ -285,7 +285,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
             $("#play").text("Playing...").unbind("click");
       
             var loop = setInterval(function(){update()},30);
-            rotation = obj.result;
+            rotation = obj.result * (360/6);
             returnMess = obj.message;
 
           }
