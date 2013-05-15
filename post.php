@@ -26,12 +26,11 @@ if(isset($_GET["post"])) {
       $row = $stmt->fetch();
       $count = $row["count"];
 
-      if($count > 0) {        
-        if($count == 1) {
-          $count++;
+      if($count > 0) {
+        $ext = "";
+        if($count > 1) {
+          $ext = " for the " . addOrdinalNumberSuffix($count) . " time";
         }
-
-        $ext = " for the " . addOrdinalNumberSuffix($count) . " time";
 
         try {    
           $facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
