@@ -47,9 +47,11 @@ if($user) {
         $secSincePlayed = $now-$lastplayed;    
       } 
 
-
-      $newCount = $count+1;      
-      $ext = " for the " . addOrdinalNumberSuffix($newCount) . " time";
+      $newCount = $count+1; 
+      $ext = "";     
+      if($newCount > 1) {
+        $ext = " for the " . addOrdinalNumberSuffix($newCount) . " time";
+      }
       
       if($count >= 1 && $secSincePlayed < 86400) {
 

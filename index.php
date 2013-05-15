@@ -204,9 +204,9 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       finished = true;
       
       if(ticks <= 4){
-        console.log("looser");
+        console.log("Account is alive.");
       } else {
-        console.log("WINNER");
+        console.log("Account is dead.");
       }
       
       $("#result").html(returnMess);
