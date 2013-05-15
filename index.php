@@ -267,7 +267,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       //do animation stuff here      
 
       $.ajax({
-        url: "/develop/play.php",
+        url: "/play.php",
         success: function(data) {          
           obj = $.parseJSON(data);
           console.log(obj);
@@ -295,7 +295,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       $(".postToFB").live("click", function() {
         $(".postToFB").text("Posting...");
         $.ajax({
-          url: "/develop/post.php",
+          url: "/post.php",
           data: {post: 1},
           success: function(data) {
             if(data === "success") {
