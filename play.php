@@ -72,7 +72,7 @@ if($user) {
 
   } else {
     //not correct permissions    
-    $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email', "redirect_uri" => "http://127.0.0.1:8888/")); 
+    $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email', "redirect_uri" => "http://socialroulette.net/develop/")); 
     
     echo json_encode(array("message" => "506", "redirect" => $loginUrl));
   }
