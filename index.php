@@ -215,10 +215,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       if(returnMess.match(/survived/g)) {
         //append post to FB button
         $("<a href='' class='postToFB btn btn-primary'>Post 'I just survived Social Roulette to Facebook'</a>").insertAfter($("#result"));
-
-      }
-
-    
+      }  
     }
     
     function update(){
@@ -277,6 +274,9 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
           
           } else if (obj.message === "505") {
             $("#result").html("You can only play Social Roulette once a day.");
+
+          } else if (obj.message === "506") {
+            window.location.href = obj.redirect;
 
           } else {     
             $("#play").text("Playing...").unbind("click");

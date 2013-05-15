@@ -16,83 +16,70 @@ $facebook = new Facebook(array(
 $user = $facebook->getUser();
 $now = time();
 $secSincePlayed = 0;
+$count = 0;
 
-if ($user) {  
+if($user) {
 
-  //check user count
-  $stmt = DB::prepare("SELECT * FROM users WHERE user=?");  
-  $stmt->execute(array($user));
-  
-  if($stmt->rowCount() > 0) {
-    $row = $stmt->fetch();
-    $count = $row["count"];
-    $lastplayed = strtotime($row["lastplayed"]);
-    $secSincePlayed = $now-$lastplayed;
-  
-  } else {
-    $count = 0;
-  }
+  //check permission
+  $permissions = $facebook->api("/me/permissions");
+  if (array_key_exists('publish_stream', $permissions['data'][0])) { 
 
-  //add cordinal message to status update
-  if($count > 0) {
-    if($count == 1) {
-      $count++;
-    }
+    //play roulette
+    $outcome = roulette();  
 
-    $ext = " for the " . addOrdinalNumberSuffix($count) . " time";
-  } else {
-    $ext = "";
-  }
-
-  //play roulette
-  $outcome = roulette();  
-
-  //Lost – delete facebook account
-  if($outcome == 0) {    
-    
-    deleteFacebookAccount($user);
-    echo json_encode(array("message" => "Deleted Facebook User ".$user));
-
-  } else {
-    //survived;
-
-    if($count >= 1 && $secSincePlayed < 86400) {
-      echo json_encode(array("message" => "505"));
+    //Lost – delete facebook account
+    if($outcome == 0) {    
+      
+      deleteFacebookAccount($user);
+      echo json_encode(array("message" => "Deleted Facebook User ".$user));
 
     } else {
+      //survived;
 
-    //try to post, will get rejected if it's a dubplicate
-    //try {    
+      $stmt = DB::prepare("SELECT * FROM users WHERE user=?");  
+      $stmt->execute(array($user));
 
-      //$facebook->api('/me/feed', 'post', array('message'=> "I just played Social Roulette".$ext." and survived! – http://socialroulette.net"));
       
-      //insert || update DB with count & userid
-      if($count > 0 ) {
-        $stmt = DB::prepare("UPDATE users SET count = ?, lastplayed=now() WHERE user = ?");
-        $stmt->execute(array($count+1, $user));
+      if($stmt->rowCount() > 0) {
+        $row = $stmt->fetch();
+        $count = $row["count"];
+        $lastplayed = strtotime($row["lastplayed"]);
+        $secSincePlayed = $now-$lastplayed;    
+      } 
+
+
+      $newCount = $count+1;      
+      $ext = " for the " . addOrdinalNumberSuffix($newCount) . " time";
       
+      if($count >= 1 && $secSincePlayed < 86400) {
+
+        echo json_encode(array("message" => "505"));
+
       } else {
-        $stmt = DB::prepare("INSERT INTO users SET count=1, lastplayed=now(), user = ?");
-        $stmt->execute(array($user));
+        
+        if($stmt->rowCount() > 0) {
+          $stmt = DB::prepare("UPDATE users SET count = ?, lastplayed=now() WHERE user = ?");
+          $stmt->execute(array($newCount, $user));
+
+        } else {
+          $stmt = DB::prepare("INSERT INTO users SET count=1, lastplayed=now(), user = ?");
+          $stmt->execute(array($user));
+        }
+
+        echo json_encode(array("message"=>"You just survived Social Roulette".$ext."!", "result" => $outcome));
       }
-
-      //return message
-      echo json_encode(array("message"=>"You just survived Social Roulette".$ext."!", "result" => $outcome));
-
-      // } catch (FacebookApiException $e) {
-      //   error_log($e);
-
-      //   echo json_encode(array("message"=>"You can only play Social Roulette once a day", "result" => $outcome));      
-      // }
-
     }
 
+  } else {
+    //not correct permissions    
+    $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email', "redirect_uri" => "http://127.0.0.1:8888/")); 
+    
+    echo json_encode(array("message" => "506", "redirect" => $loginUrl));
   }
 
 } else {
   echo json_encode(array("message" => "503"));
 }
-
 
 function addOrdinalNumberSuffix($num) {
   if (!in_array(($num % 100),array(11,12,13))){
