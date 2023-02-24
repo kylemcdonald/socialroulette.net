@@ -44,8 +44,8 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
     
   <meta property="og:title" content="Social Roulette" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://socialroulette.net" />
-  <meta property="og:image" content="http://socialroulette.net/img/256.png" />
+  <meta property="og:url" content="https://socialroulette.net" />
+  <meta property="og:image" content="https://socialroulette.net/img/256.png" />
 
 
   <style type="text/css">
@@ -92,12 +92,12 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </a>
-              <a class="brand" href="http://socialroulette.net/">
+              <a class="brand" href="https://socialroulette.net/">
                 <strong>Social Roulette</strong>
               </a>
               <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
-                      <li><a href="http://twitter.com/roulettenet"><img src="./img/twitterIcon.png" class="twitterIcon">Twitter</a></li>
+                      <li><a href="https://twitter.com/roulettenet"><img src="./img/twitterIcon.png" class="twitterIcon">Twitter</a></li>
                       <li><a href="mailto:info@socialroulette.net"><img src="./img/mailIcon.png" class="contactIcon">Contact</a></li>
                 </ul>
             </div>
@@ -128,17 +128,17 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
       <?php endif;?>
       
 <br/><br/>
-<div class="fb-like" data-href="http://socialroulette.net/" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-font="arial"></div>
+<div class="fb-like" data-href="https://socialroulette.net/" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false" data-font="arial"></div>
 
     </div>
     <div style="clear: both;text-shadow: 0px 1px 1px #91999d; color:black; font-size:30px; padding: 15px 55px 0px 55px; line-height: 50px" id="result">Social Roulette has a 1 in 6 chance of deleting your account.<br/>What are you afraid of?</div></div>
     
     <div class="container center">
     <div class="dlead dmargintop dmarginbottom">Testimonials</div>
-    <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="http://gawker.com/">Gawker</a></small></h4></div>
+    <div class="justify maintext"><h4>"Social Roulette just rewrote the rules for online gaming." <small><a href="https://gawker.com/">Gawker</a></small></h4></div>
     <div class="justify maintext"><h4>"*Man, if only these hackers could make up their mind." <small><a href="https://twitter.com/bruces">Bruce Sterling</a></small></h4></div>
-    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="http://daringfireball.net/">John Gruber</a></small></h4></div>
-    <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="http://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
+    <div class="justify maintext"><h4>"It's the most exciting thing I've done this year." <small><a href="https://daringfireball.net/">John Gruber</a></small></h4></div>
+    <div class="justify maintext"><h4>"I still can't tell whether I won or not." <small><a href="https://twitter.com/FaltyDL">FaltyDL</a></small></h4></div>
     </div>
     
     <hr class="roulette">
