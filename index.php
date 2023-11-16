@@ -1,33 +1,33 @@
 <?php
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
-require 'facebooksdk/src/facebook.php';
-require 'cfg.php';
+// ini_set("display_errors", 1);
+// error_reporting(E_ALL);
+// require 'facebooksdk/src/facebook.php';
+// require 'cfg.php';
 
-//Get Path
-$path = explode('/',str_replace('?'.$_SERVER['QUERY_STRING'],'',$_SERVER['REQUEST_URI']));
-array_shift($path);
+// //Get Path
+// $path = explode('/',str_replace('?'.$_SERVER['QUERY_STRING'],'',$_SERVER['REQUEST_URI']));
+// array_shift($path);
 
-// Create our Application instance (replace this with your appId and secret).
-$facebook = new Facebook(array(
-  'appId'  => Config::appId,
-  'secret' => Config::secret,
-));
+// // Create our Application instance (replace this with your appId and secret).
+// $facebook = new Facebook(array(
+//   'appId'  => Config::appId,
+//   'secret' => Config::secret,
+// ));
 
-// Get User ID
-$user = $facebook->getUser();
+// // Get User ID
+// $user = $facebook->getUser();
 
-if ($user) {
-  try {
-    // Proceed knowing you have a logged in user who's authenticated.
-    $user_profile = $facebook->api('/me');
-  } catch (FacebookApiException $e) {
-    error_log($e);
-    $user = null;
-  }
-}
+// if ($user) {
+//   try {
+//     // Proceed knowing you have a logged in user who's authenticated.
+//     $user_profile = $facebook->api('/me');
+//   } catch (FacebookApiException $e) {
+//     error_log($e);
+//     $user = null;
+//   }
+// }
 
-$loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email')); 
+// $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email')); 
 ?>
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -172,13 +172,7 @@ $loginUrl = $facebook->getLoginUrl(array('scope' => 'publish_stream, email'));
     
     <!-- Like Button -->
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="nLLdhpgW"></script>
     <!-- end like -->
 
   </div>
